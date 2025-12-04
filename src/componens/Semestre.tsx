@@ -41,7 +41,7 @@ const Semestre = ({ numero, onPromedioChange }: SemestreProps) => {
         console.log(`Auto-saving semester ${numero}...`);
         localStorage.setItem(`semestre_${numero}`, JSON.stringify(materiasRef.current));
       }
-    }, 15000);
+    }, 5000);
 
     return () => clearInterval(intervalId);
   }, [numero]);

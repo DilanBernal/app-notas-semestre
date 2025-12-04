@@ -280,3 +280,115 @@ th {
   border-color: var(--primary-color);
   color: var(--primary-color);
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .global-avg {
+    font-size: 0.9rem;
+  }
+
+  .semestres-grid {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .semestre-card {
+    padding: 1rem;
+  }
+
+  .semestre-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .header-left {
+    width: 100%;
+  }
+
+  .semestre-avg {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .add-materia-form {
+    flex-direction: column;
+  }
+
+  .materia-input {
+    width: 100%;
+  }
+
+  .add-btn {
+    width: 100%;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+
+  th,
+  td {
+    padding: 0.5rem 0.3rem;
+  }
+
+  .grade-input {
+    width: 50px;
+    font-size: 0.85rem;
+  }
+
+  .init-form {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+
+  .init-form h1 {
+    font-size: 1.5rem;
+  }
+
+  .init-form input {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header h1 {
+    font-size: 1.2rem;
+  }
+
+  .global-avg {
+    font-size: 0.8rem;
+  }
+
+  .semestre-card {
+    padding: 0.75rem;
+  }
+
+  table {
+    font-size: 0.75rem;
+  }
+
+  th,
+  td {
+    padding: 0.4rem 0.2rem;
+  }
+
+  .grade-input {
+    width: 45px;
+    padding: 3px;
+  }
+
+  .delete-btn svg {
+    width: 1.5em;
+  }
+
+  .save-icon-btn {
+    margin-left: 0.5rem;
+  }
+}
