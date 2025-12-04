@@ -27,7 +27,7 @@ const Materia = ({ data, onUpdate, onDelete }: MateriaProps) => {
         <input
           type="number"
           min="0"
-          max="5"
+          max="1"
           step="0.1"
           value={data.nota1 || ''}
           onChange={(e) => handleChange(e, 'nota1')}

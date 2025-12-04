@@ -75,9 +75,11 @@
 }
 
 .semestres-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
+  max-width: calc(1280px/1.1);
+  margin: 0 auto;
 }
 
 .semestre-card {
@@ -86,15 +88,36 @@
   border-radius: 12px;
   box-shadow: 0 4px 12px var(--shadow-color);
   text-align: left;
+  transition: all 0.3s ease;
 }
 
 .semestre-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 1rem;
+  cursor: pointer;
+}
+
+.semestre-header:hover {
+  opacity: 0.8;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toggle-icon {
+  transition: transform 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.toggle-icon.open {
+  transform: rotate(180deg);
 }
 
 .semestre-avg {
@@ -103,10 +126,26 @@
   color: var(--text-color);
 }
 
+.collapsible-content {
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  max-height: 2000px;
+  /* Arbitrary large height */
+  opacity: 1;
+}
+
+.collapsible-content.collapsed {
+  max-height: 0;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+}
+
 .add-materia-form {
   display: flex;
   gap: 1rem;
   margin-bottom: 1.5rem;
+  margin-top: 1rem;
 }
 
 .materia-input {
@@ -125,6 +164,43 @@
 
 .add-btn:hover {
   background-color: var(--primary-hover);
+}
+
+.save-icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  padding: 5px;
+  margin-left: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.save-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--primary-color);
+}
+
+.save-icon-btn.saved {
+  color: var(--success-color);
+}
+
+.check-icon {
+  animation: scaleIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
 }
 
 .table-container {
@@ -175,6 +251,23 @@ th {
 
 .delete-btn:hover {
   background: rgba(255, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-row {
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
 .back-btn {
